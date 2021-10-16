@@ -68,6 +68,10 @@
         {
             "match": "(?i:\\s*\\b(False|True|NULL_REF)\\b)",
             "name": "constant.language.emel"
+        },
+        {
+            "match": "(?i:\\s*\\b(Object)\\b\\s*)",
+            "name": "storage.type.standart.emel"
         }
 
 	],
@@ -75,7 +79,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.emel",
-				"match": "(?i:\\b(If|Then|Else|ElseIf|Else If|End If|While|Wend|For|To|Each|Case|Select|End Select|Return|Continue|Do|Until|Loop|Next|With|Exit Do|Exit For|Exit Function|Exit Property|Exit Sub|IIf|End Loop|End For|Break)\\b)"
+				"match": "(?i:\\b(If|Then|Else|End If|While|For|Switch|Case|Default|End|Select|End Select|Return|Continue|Loop|With|End Loop|End For|Break|Having|Where)\\b)"
 			}]
 		},
 		"strings": {
