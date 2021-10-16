@@ -1,0 +1,25 @@
+{
+    "name": "emel",
+    "displayName": "emel",
+    "description": "",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.61.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "emel",
+            "aliases": ["emel", "emel"],
+            "extensions": [".emel"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "emel",
+            "scopeName": "source.emel",
+            "path": "./syntaxes/emel.tmLanguage.json"
+        }]
+    }
+}

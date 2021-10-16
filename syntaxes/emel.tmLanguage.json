@@ -1,0 +1,93 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "emel",
+	"scopeName": "source.emel",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+            "patterns": [
+                {
+                    "begin": "/\\*",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.comment.emel"
+                        }
+                    },
+                    "end": "\\*/",
+                    "name": "comment.line.apostrophe.emel"
+                }
+            ]
+        },
+		{
+            "begin": "(^[ \\t]+)?(?=')",
+            "beginCaptures": {
+                "1": {
+                    "name": "punctuation.whitespace.comment.leading.emel"
+                }
+            },
+            "end": "(?!\\G)",
+            "patterns": [
+                {
+                    "begin": "'",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.comment.emel"
+                        }
+                    },
+                    "end": "'",
+                    "name": "comment.line.apostrophe.emel"
+                }
+            ]
+        },
+        {
+            "captures": {
+                "1": {
+                    "name": "entity.name.function.emel"
+                }
+            },
+            "match": "(?i:(\\b[a-zA-Z_x7f-xff][a-zA-Z0-9_x7f-xff]*?\\b)(?=\\(\\)?))",
+            "name": "support.function.emel"
+        },
+        {
+            "match": "(?x)\n(@?[_[:alpha:]][_[:alnum:]]*)\n(?=\n  (\\s*\\?)?\n  \\s*\\.\\s*@?[_[:alpha:]][_[:alnum:]]*\n)",
+            "name": "variable.other.emel"
+        },
+        {
+            "match": "(?i:((?<=(\\+|=|-|\\&|\\\\|/|<|>|\\(|,))\\s*\\b([a-zA-Z_x7f-xff][a-zA-Z0-9_x7f-xff]*?)\\b(?!(\\(|\\.))|\\b([a-zA-Z_x7f-xff][a-zA-Z0-9_x7f-xff]*?)\\b(?=\\s*(\\+|=|-|\\&|\\\\|/|<|>|\\(|\\)))))",
+            "name": "variable.other.emel"
+        },
+        {
+            "match": "-?\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f)?\\b",
+            "name": "constant.numeric.emel"
+        },
+        {
+            "match": "(?i:\\s*\\b(False|True|NULL_REF)\\b)",
+            "name": "constant.language.emel"
+        }
+
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.emel",
+				"match": "(?i:\\b(If|Then|Else|ElseIf|Else If|End If|While|Wend|For|To|Each|Case|Select|End Select|Return|Continue|Do|Until|Loop|Next|With|Exit Do|Exit For|Exit Function|Exit Property|Exit Sub|IIf|End Loop|End For|Break)\\b)"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.emel",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.emel",
+					"match": "\\\\."
+				}
+			]
+		}
+	}
+}
