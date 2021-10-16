@@ -1,8 +1,13 @@
 {
     "name": "emel",
-    "displayName": "emel",
+    "displayName": "EME-L",
     "description": "",
     "version": "0.0.1",
+    "publisher": "LeON",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/LeONTheProfess/EMEL_VS_Code_Extension.git"
+    },
     "engines": {
         "vscode": "^1.61.0"
     },
