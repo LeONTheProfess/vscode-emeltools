@@ -79,7 +79,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.emel",
-				"match": "(?i:\\b(If|Then|Else|End If|While|For|Switch|Case|Default|End|Select|End Select|Return|Continue|Loop|With|End Loop|End For|Break|Having|Where)\\b)"
+				"match": "(?i:\\b(If|Else|End If|While|End While|For|Switch|End Switch|Case|Default|End|Select|End Select|Return|Continue|Loop|With|End Loop|End For|Break|Having|Where)\\b)"
 			}]
 		},
 		"strings": {
