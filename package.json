@@ -2,7 +2,7 @@
     "name": "vscode-emel",
     "displayName": "EME-L",
     "description": "",
-    "version": "0.0.4",
+    "version": "0.1.0",
     "publisher": "LeONTheProfess",
     "repository": {
         "type": "git",
@@ -25,6 +25,12 @@
             "language": "emel",
             "scopeName": "source.emel",
             "path": "./syntaxes/emel.tmLanguage.json"
-        }]
+        }],
+        "snippets": [
+            {
+                "language": "emel",
+                "path": "./snippets/emel.snippets.json"
+            }
+        ]
     }
 }

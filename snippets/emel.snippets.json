@@ -1,0 +1,70 @@
+{
+    "If": {
+      "prefix": "If",
+      "body": [
+        "If ($1)",
+        "\t$2",
+        "End If"
+      ],
+      "description": "If code block"
+    },
+    "Else": {
+        "prefix": "Else",
+        "body": [
+        "Else",
+        "\t$0"
+        ],
+        "description": "Else"
+    },
+    "While": {
+        "prefix": "While",
+        "body": [
+          "While ($1)",
+          "\t$2",
+          "End While"
+        ],
+        "description": "While code block"
+    },
+    "Loop": {
+    "prefix": "Loop",
+    "body": [
+        "Loop ($1)",
+        "\t$2",
+        "End Loop"
+    ],
+    "description": "Loop code block"
+    },
+    "For": {
+        "prefix": "For",
+        "body": [
+            "For ($1; $2; $3)",
+            "\t$4",
+            "End For"
+        ],
+        "description": "For code block"
+    },
+    "Select": {
+        "prefix": "Select",
+        "body": [
+            "Select ($1)",
+            "\t$2",
+            "End Select"
+        ],
+        "description": "Select code block"
+    },
+
+    "Object": {
+        "prefix": "Object",
+        "body": [
+          "Object(\"$1\");"
+        ],
+        "description": "Object declaration"
+    },
+    "AddOutput": {
+        "prefix": "AddOutput",
+        "body": [
+            "AddOutput(\"$1\", \"$2\");"
+        ],
+        "description": "AddOutput"
+    }
+  }
