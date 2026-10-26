@@ -1,5 +1,5 @@
 # EME-L расширение Visual Studio Code
-Расширение [Visual Studio Code](https://code.visualstudio.com/) для подсветки синтаксиса языка EME-L
+Расширение [Visual Studio Code](https://code.visualstudio.com/) для подсветки синтаксиса и вставки шаблонов кода языка EME-L.
 
 
 ## Начать использование
@@ -9,6 +9,12 @@
 <img src=https://raw.githubusercontent.com/LeONTheProfess/vscode-emeltools/master/images/emel_install.gif width=500 height=300>
 
 -   **Шаг 2.** Откройте или создайте emel файл и можно начинать писать код!
+
+## Шаблоны кода
+
+Начните вводить префикс шаблона в `.emel` файле и выберите нужный вариант из списка автодополнения. Доступны шаблоны для `If`, `For`, `While`, `Loop`, `Switch`, обработки query через `Select`, объявления метода и API-обработчика `GetTemplate`, а также комментариев.
+
+Однострочные комментарии начинаются с апострофа (`'`), блочные — с `/*` и заканчиваются `*/`.
 
 
 ## Настройка среды разработки

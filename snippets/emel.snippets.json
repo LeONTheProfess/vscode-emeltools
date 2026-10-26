@@ -1,70 +1,129 @@
 {
-    "If": {
-      "prefix": "If",
-      "body": [
-        "If ($1)",
-        "\t$2",
-        "End If"
-      ],
-      "description": "If code block"
-    },
-    "Else": {
-        "prefix": "Else",
-        "body": [
-        "Else",
-        "\t$0"
-        ],
-        "description": "Else"
-    },
-    "While": {
-        "prefix": "While",
-        "body": [
-          "While ($1)",
-          "\t$2",
-          "End While"
-        ],
-        "description": "While code block"
-    },
-    "Loop": {
+  "If": {
+    "prefix": "If",
+    "body": [
+      "If (${1:condition})",
+      "\t$0",
+      "End If"
+    ],
+    "description": "If block"
+  },
+  "If Else": {
+    "prefix": "ife",
+    "body": [
+      "If (${1:condition})",
+      "\t$2",
+      "Else",
+      "\t$0",
+      "End If"
+    ],
+    "description": "If/Else block"
+  },
+  "Else": {
+    "prefix": "Else",
+    "body": [
+      "Else",
+      "\t$0"
+    ],
+    "description": "Else branch"
+  },
+  "While": {
+    "prefix": "While",
+    "body": [
+      "While (${1:condition})",
+      "\t$0",
+      "End While"
+    ],
+    "description": "While loop"
+  },
+  "Loop": {
     "prefix": "Loop",
     "body": [
-        "Loop ($1)",
-        "\t$2",
-        "End Loop"
+      "Loop (${1:collection})",
+      "\t$0",
+      "End Loop"
     ],
-    "description": "Loop code block"
-    },
-    "For": {
-        "prefix": "For",
-        "body": [
-            "For ($1; $2; $3)",
-            "\t$4",
-            "End For"
-        ],
-        "description": "For code block"
-    },
-    "Select": {
-        "prefix": "Select",
-        "body": [
-            "Select ($1)",
-            "\t$2",
-            "End Select"
-        ],
-        "description": "Select code block"
-    },
-
-    "Object": {
-        "prefix": "Object",
-        "body": [
-          "Object(\"$1\");"
-        ],
-        "description": "Object declaration"
-    },
-    "AddOutput": {
-        "prefix": "AddOutput",
-        "body": [
-            "AddOutput(\"$1\", \"$2\");"
-        ],
-        "description": "AddOutput"
-    }
+    "description": "Iterate over a collection or query"
+  },
+  "For": {
+    "prefix": "For",
+    "body": [
+      "For (${1:initialization}; ${2:condition}; ${3:increment})",
+      "\t$0",
+      "End For"
+    ],
+    "description": "For loop"
+  },
+  "Switch": {
+    "prefix": "Switch",
+    "body": [
+      "Switch (${1:value})",
+      "Case ${2:value}:",
+      "\t$3",
+      "Break;",
+      "Default:",
+      "\t$0",
+      "End Switch"
+    ],
+    "description": "Switch/Case block"
+  },
+  "Select Query": {
+    "prefix": "Select",
+    "body": [
+      "Select (${1:Query})",
+      "\t$0",
+      "End Select"
+    ],
+    "description": "Process query rows"
+  },
+  "Method": {
+    "prefix": "method",
+    "body": [
+      "${1:MethodName}(${2:parameters})",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "EMEL method"
+  },
+  "GetTemplate handler": {
+    "prefix": "gettemplate",
+    "body": [
+      "GetTemplate(treeRequest as \"PropertyTree\", treeAnswer as \"PropertyTree\", Doc as \"HTMLDocument\", Headers as \"Parameters\")",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "API handler entry point"
+  },
+  "Object": {
+    "prefix": "Object",
+    "body": [
+      "Object(\"${1:Type}\");"
+    ],
+    "description": "Create an EMEL object"
+  },
+  "AddOutput": {
+    "prefix": "AddOutput",
+    "body": [
+      "AddOutput(\"${1:Name}\", ${2:value});"
+    ],
+    "description": "Add an output field"
+  },
+  "Line comment": {
+    "prefix": "comment",
+    "body": [
+      "' $0"
+    ],
+    "description": "EMEL apostrophe comment"
+  },
+  "Block comment": {
+    "prefix": "comment-block",
+    "body": [
+      "/*",
+      "$0",
+      "*/"
+    ],
+    "description": "EMEL block comment"
   }
+}

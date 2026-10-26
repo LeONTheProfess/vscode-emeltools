@@ -4,77 +4,101 @@
 	"scopeName": "source.emel",
 	"patterns": [
 		{
-			"include": "#keywords"
+			"include": "#comments"
 		},
 		{
 			"include": "#strings"
 		},
 		{
-            "patterns": [
-                {
-                    "begin": "/\\*",
-                    "end": "\\*/",
-                    "name": "comment.block.emel"
-                }
-            ]
-        },
+			"include": "#keywords"
+		},
 		{
-            "begin": "(^[ \\t]+)?(?=')",
-            "end": "(?!\\G)",
-            "patterns": [
-                {
-                    "begin": "'",
-                    "end": "'",
-                    "name": "comment.line.apostrophe.emel"
-                }
-            ]
-        },
-        {
-            "match": "(?i:(\\b(is_)[a-zA-Z_x7f-xff][a-zA-Z0-9_x7f-xff]*?\\b)(?=\\(\\)?))",
-            "name": "support.function.emel"
-        },
-        {
-            "match": "(?i:(\\b[a-zA-Z_x7f-xff][a-zA-Z0-9_x7f-xff]*?\\b)(?=\\(\\)?))",
-            "name": "entity.name.function.emel"
-        },
-        {
-            "match":"(?i:\\b(End( )?If|End (Select|For|Loop|Switch|While))\\b)",
-            "name": "keyword.conditional.end.emel"
-        },
-        {
-            "match":"(?i:\\b(Return|As|Break|Continue|ByVal|AsExternal)\\b)",
-            "name": "keyword.control.emel"
-        },
-        {
-            "match": "(?x)\n(@?[_[:alpha:]][_[:alnum:]]*)\n(?=\n  (\\s*\\?)?\n  \\s*\\.\\s*@?[_[:alpha:]][_[:alnum:]]*\n)",
-            "name": "variable.other.emel"
-        },
-        {
-            "match": "(?i:((?<=(\\+|=|-|\\&|\\\\|\\||/|<|>|\\(|,))\\s*\\b([a-zA-Z_x7f-xff][a-zA-Z0-9_x7f-xff]*?)\\b(?!(\\(|\\.))|\\b([a-zA-Z_x7f-xff][a-zA-Z0-9_x7f-xff]*?)\\b(?=\\s*(\\+|=|-|\\&|\\\\|\\||/|<|>|;|ByVal|AsExternal|AS|\\(|\\)))))",
-            "name": "variable.other.emel"
-        },
-        {
-            "match": "-?\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f)?\\b",
-            "name": "constant.numeric.emel"
-        },
-        {
-            "match": "(?i:\\s*\\b(Object)\\b\\s*)",
-            "name": "storage.type.standart.emel"
-        }
-
+			"match": "(?im)^[ \\t]*([_[:alpha:]][_[:alnum:]]*)[ \\t]*(?=\\([^{}\\n]*\\)\\s*\\{)",
+			"name": "entity.name.function.emel"
+		},
+		{
+			"match": "(?i)\\b(is_[a-zA-Z0-9_]+)\\b(?=\\s*\\()",
+			"name": "support.function.emel"
+		},
+		{
+			"match": "(?i)\\b(Object)\\b(?=\\s*\\()",
+			"name": "support.class.emel"
+		},
+		{
+			"match": "(?i)\\b([_[:alpha:]][_[:alnum:]]*)\\b(?=\\s*\\()",
+			"name": "entity.name.function.emel"
+		},
+		{
+			"match": "(?i)\\b([_[:alpha:]][_[:alnum:]]*)\\b(?=\\s*=)",
+			"name": "variable.other.emel"
+		},
+		{
+			"match": "(?i)(?<=\\.)[_[:alpha:]][_[:alnum:]]*",
+			"name": "variable.other.member.emel"
+		},
+		{
+			"match": "-?\\b((0[xX][0-9a-fA-F]+)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)(UL|ul|L|l|u|U|F|f)?\\b",
+			"name": "constant.numeric.emel"
+		},
+		{
+			"match": "(==|!=|<=|>=|=|<|>|\\+|-|\\*|/|~|&|\\|)",
+			"name": "keyword.operator.emel"
+		},
+		{
+			"match": "[{}]",
+			"name": "punctuation.section.block.emel"
+		},
+		{
+			"match": "[(),;]",
+			"name": "punctuation.separator.emel"
+		}
 	],
 	"repository": {
-        "keywords": {
+		"comments": {
 			"patterns": [
-                {
-                    "name": "keyword.conditional.emel",
-                    "match": "(?i:\\b(If|Else|While|For|Switch|Case|Select|Loop|From|With|Where|(Group|Order) by|Union|Having)\\b)"
-			    },
-                {
-                    "match": "(?i:\\s*\\b(False|True|NULL_REF)\\b)",
-                    "name": "constant.language.emel"
-                }
-            ]
+				{
+					"begin": "/\\*",
+					"end": "\\*/",
+					"name": "comment.block.emel"
+				},
+				{
+					"begin": "'",
+					"end": "$",
+					"name": "comment.line.apostrophe.emel"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"match": "(?i)\\b(End[ \\t]+(If|For|Loop|Switch|While|Select))\\b",
+					"name": "keyword.control.end.emel"
+				},
+				{
+					"match": "(?i)\\b(If|Else|While|For|Loop|Switch|Case|Select|With)\\b",
+					"name": "keyword.control.emel"
+				},
+				{
+					"match": "(?i)\\b(Return|Break|Continue)\\b",
+					"name": "keyword.control.flow.emel"
+				},
+				{
+					"match": "(?i)\\b(AsExternal|ByVal|As|RefOf)\\b",
+					"name": "storage.modifier.emel"
+				},
+				{
+					"match": "(?i)\\b(From|Where|Having|Union)\\b|\\b(Group|Order)[ \\t]+by\\b",
+					"name": "keyword.other.emel"
+				},
+				{
+					"match": "(?i)\\b(And|Or|Not|Mod)\\b",
+					"name": "keyword.operator.word.emel"
+				},
+				{
+					"match": "(?i)\\b(False|True|NULL_REF)\\b",
+					"name": "constant.language.emel"
+				}
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.emel",

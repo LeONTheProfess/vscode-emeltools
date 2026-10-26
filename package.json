@@ -1,7 +1,7 @@
 {
     "name": "vscode-emel",
     "displayName": "EME-L",
-    "description": "",
+    "description": "Syntax highlighting and code snippets for the EME-L language",
     "version": "0.1.0",
     "publisher": "LeONTheProfess",
     "repository": {
@@ -17,7 +17,7 @@
     "contributes": {
         "languages": [{
             "id": "emel",
-            "aliases": ["emel", "emel"],
+            "aliases": ["emel", "EME-L"],
             "extensions": [".emel"],
             "configuration": "./language-configuration.json"
         }],
