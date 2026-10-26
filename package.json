@@ -2,11 +2,15 @@
     "name": "vscode-emel",
     "displayName": "EME-L",
     "description": "Syntax highlighting and code snippets for the EME-L language",
-    "version": "0.1.0",
+    "version": "0.2.0",
+    "icon": "images/EME-L.png",
     "publisher": "LeONTheProfess",
     "repository": {
         "type": "git",
         "url": "https://github.com/LeONTheProfess/vscode-emeltools.git"
+    },
+    "scripts": {
+        "package": "vsce package"
     },
     "engines": {
         "vscode": "^1.61.0"
@@ -32,5 +36,8 @@
                 "path": "./snippets/emel.snippets.json"
             }
         ]
+    },
+    "devDependencies": {
+        "@vscode/vsce": "^3.3.2"
     }
 }

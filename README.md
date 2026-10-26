@@ -22,3 +22,9 @@
 -   Выберете в статус-баре язык разработки и можно приступать к редактированию кода.
 
 <img src=https://raw.githubusercontent.com/LeONTheProfess/vscode-emeltools/master/images/emel_work.gif width=634 height=313>
+
+## Сборка VSIX
+
+Установите зависимости командой `npm install`, затем выполните `npm run package`.
+Файл `.vsix` появится в корне проекта; VSCE автоматически создаст внутри него
+`extension.vsixmanifest`.
