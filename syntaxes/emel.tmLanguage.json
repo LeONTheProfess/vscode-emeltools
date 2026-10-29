@@ -63,8 +63,8 @@
 				},
 				{
 					"begin": "'",
-					"end": "$",
-					"name": "comment.line.apostrophe.emel"
+					"end": "'",
+					"name": "comment.block.apostrophe.emel"
 				}
 			]
 		},

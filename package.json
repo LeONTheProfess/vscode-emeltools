@@ -2,7 +2,7 @@
     "name": "vscode-emel",
     "displayName": "EME-L",
     "description": "Syntax highlighting and code snippets for the EME-L language",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "icon": "images/EME-L.png",
     "publisher": "LeONTheProfess",
     "repository": {

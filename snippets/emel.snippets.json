@@ -110,12 +110,12 @@
     ],
     "description": "Add an output field"
   },
-  "Line comment": {
+  "Apostrophe comment": {
     "prefix": "comment",
     "body": [
-      "' $0"
+      "' $0 '"
     ],
-    "description": "EMEL apostrophe comment"
+    "description": "EMEL apostrophe-delimited comment"
   },
   "Block comment": {
     "prefix": "comment-block",
